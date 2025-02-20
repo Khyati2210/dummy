@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/about.css" %}">
+    <title>ScrapKart</title>
+</head>
+<body>
+    {% include "nav.html" %}
+    <section class="about-section">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <img src="your-image1.jpg" alt="Scrap Collection" class="about-image">
+            <div class="about-text">
+                <p>
+                    ScrapKart is an innovative online platform dedicated to waste management and recycling.
+                    We collect scrap from households, schools, and other institutions, ensuring a cleaner
+                    and greener environment. Our team picks up the scrap and sells it to recycling businesses,
+                    generating profits while promoting sustainability.
+                </p>
+                <p>
+                    Our mission is to make scrap disposal easy and efficient while contributing to environmental well-being.
+                    Join us in making the world a cleaner place, one scrap at a time!
+                </p>
+            </div>
+        </div>
+
+        <div class="about-images">
+            <img src="{% static "images/si3.png" %}" alt="Recycling Process">
+            <img src="{% static "images/si.png" %}" alt="Eco-Friendly Waste Management">
+        </div>
+    </section>
+  
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h3>About ScrapKart</h3>
+                <p>ScrapKart is an online scrap-buying platform committed to promoting responsible recycling.
+                    Schedule pickups, get paid instantly, and contribute to a greener planet.</p>
+            </div>
+            
+            <div class="footer-section follow">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-linkedin"></i>
+                </div>
+                <p>Links coming soon!</p>
+            </div>
+            
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p>📞 8464887568</p>
+                <p>📱 8464887568</p>
+                <p>📍 Mahendra Hills, TMC Colony Road No. 7</p>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>© 2025 ScrapKart. All rights reserved.</p>
+        </div>
+    </footer>
+  </body>
+  </html>

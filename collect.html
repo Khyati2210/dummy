@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static "css/styles.css" %}>
+    <title>ScrapKart</title>
+</head>
+<body>
+    {% include "nav.html" %}
+    {% comment %} <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="{% static "images/logo1.png" %}" alt="ScrapKart Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="{% url "home" %}">Home</a></li>
+                <li><a href="{% url "about" %}">About Us</a></li>
+                <li><a href="{% url "categories" %}">Categories</a></li>
+                <li><a href="{% url "contact" %}">Contact</a></li>
+                {% if session %}
+                <li><a href={% url "logout" %}>Logout</a></li>
+                {% else %}
+                <li><a href="{% url "login" %}" class="login-btn">Login</a></li>                
+                {% endif %}
+               
+            </ul>
+        </nav>
+    </header> {% endcomment %}
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We Collect Your Scrap - ScrapKart</title>
+    <link rel="stylesheet" href={% static "css/collect.css" %}>
+</head>
+<body>
+
+   
+    <!-- We Collect Your Scrap Section -->
+    <section class="scrap-collection">
+        <div class="container">
+            <h2>We Collect Your Scrap</h2>
+            <p>Our team comes to your location and collects your scrap items safely and efficiently.</p>
+            <div class="scrap-details">
+                <img src="{% static "images/si4.png" %}" alt="Scrap Collection">
+                <div class="info">
+                    <h3>How It Works</h3>
+                    <ul>
+                        <li>Schedule a pickup online</li>
+                        <li>Our team arrives at your location</li>
+                        <li>We weigh and categorize the scrap</li>
+                        <li>Receive instant payment</li>
+                    </ul>
+                    <a href="{% url "request_pickup" %}" class="btn">Schedule a Pickup</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+   <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h3>About ScrapKart</h3>
+                <p>ScrapKart is an online scrap-buying platform committed to promoting responsible recycling.
+                    Schedule pickups, get paid instantly, and contribute to a greener planet.</p>
+            </div>
+            
+            <div class="footer-section follow">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-linkedin"></i>
+                </div>
+                <p>Links coming soon!</p>
+            </div>
+            
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p>📞 8464887568</p>
+                <p>📱 8464887568</p>
+                <p>📍 Mahendra Hills, TMC Colony Road No. 7</p>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>© 2025 ScrapKart. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,154 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static "css/styles.css" %}>
+    <title>ScrapKart</title>
+</head>
+<body>
+    {% include "nav.html" %}
+    {% comment %} <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="{% static "images/logo1.png" %}" alt="ScrapKart Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="{% url "home" %}">Home</a></li>
+                <li><a href="{% url "about" %}">About Us</a></li>
+                <li><a href="{% url "categories" %}">Categories</a></li>
+                <li><a href="{% url "contact" %}">Contact</a></li>
+                {% if session %}
+                <li><a href={% url "logout" %}>Logout</a></li>
+                {% else %}
+                <li><a href="{% url "login" %}" class="login-btn">Login</a></li>                
+                {% endif %}
+            </ul>
+        </nav>
+    </header> {% endcomment %}
+    <main>
+        <section class="hero">
+            <h1 class="title">Scrap<span style="color: yellow;">Kart</span></h1>
+            <p>Turn Your Scrap into Cash – Recycle Today!
+                Schedule a pickup, get the best prices, and contribute to a greener planet</p>
+        </section>
+        
+        {% comment %} <section id="about" clss="about-us">
+            <div class="about-content">
+              <img src="{% static "images/si4.png" %}" alt="About AcrapKart" class="about-image">
+              <img src="{% static "images/si6.png" %}" alt="About AcrapKart" class="about-image">
+              <img src="{% static "images/si2.png" %}" alt="About AcrapKart" class="about-image"> {% endcomment %}
+              {% comment %} <div clss="about-text">           
+                <h2>About Us</h2>
+                <p>
+                    There are many variationgjbfkv;sdlxsxs of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised.
+                </p>
+              </div> {% endcomment %}
+            {% comment %} </div>
+        </section> {% endcomment %}
+        <section class="how-it-works">
+            <h2>How We Work: The 3-Step Process</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <img src="{% static "images/1s.png" %}" alt="Schedule Pickup">
+                    <h3>Schedule Your Pickup</h3>
+                    <a href="{% url "request_pickup" %}">View More →</a>
+                </div>
+                <div class="step">
+                    <img src="{% static "images/2s.png" %}" alt="We Collect Scrap">
+                    <h3>We Collect Your Scrap</h3>
+                    <a href="{% url "collect" %}">View More →</a>
+                </div>
+                <div class="step">
+                    <img src="{% static "images/3s.png" %}" alt="Get Paid">
+                    <h3>Sell Your Scrap & Support Recycling Businesses</h3>
+                    <a href="{% url "recycle" %}">View More →</a>
+                </div>
+            </div>
+        </section>
+        <section class="how-scrapkart-works">
+            <div class="how-it-works-container">
+                <div class="how-it-works-text">
+                    <h3>HOW SCRAPKART WORKS</h3>
+                    <p>📅 <strong>Schedule a Pickup</strong><br>
+                        Book a convenient date and time through our website or app.</p>
+                    <p>🚛 <strong>Doorstep Collection</strong><br>
+                        Our ScrapKart team arrives at your location to collect the scrap materials.</p>
+                    <p>💰♻️ <strong>Get Paid & Recycle</strong><br>
+                        Receive instant payment based on weight, and we ensure responsible recycling.</p>
+                    <p class="description">
+                        The scrap business is essential for recycling materials like metal, paper, and e-waste, reducing landfill waste and conserving resources.
+                        It’s a profitable and scalable venture due to the growing demand for recycled materials. The process involves collecting, sorting, and
+                        responsibly recycling scrap to benefit both the environment and industries.
+                    </p>
+                </div>
+                <div class="how-it-works-image">
+                    <img src="{% static "images/si6.png" %}" alt="How ScrapKart Works">
+                </div>
+            </div>
+        </section>
+        
+        <section id="pickup" class="request-pickup">
+            <div class="pickup-content">
+                <div class="pickup-image">
+                    <!-- <img src="images/trash.jpg" alt="Request Pickup Image"> -->
+                </div>
+                <div class="pickup-info">
+                    <h2>Request for Pickup</h2>
+                    <p>
+                        Need to dispose of your recyclable materials? Schedule a pickup with ScrapKart and let us handle it responsibly. Together, we can make a difference for a cleaner and greener planet.
+                    </p>
+                    <a href="{% url "request_pickup" %}" class="pickup-btn">Request Pickup</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <section class="compost-section">
+        <div class="compost-container">
+            <div class="compost-text">
+                <h2>Organic Waste Recycling</h2>
+                <p>At ScrapKart, we recycle organic waste into compost, reducing landfill waste and promoting sustainable agriculture. Join us in making the planet greener!</p>
+                <a href="{% url "compost" %}" class="btn">Learn More</a>
+            </div>
+            <div class="compost-image">
+                <img src="compost1.jpg" alt="Compost Process">
+                <img src="compost2.jpg" alt="Organic Waste Recycling">
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h3>About ScrapKart</h3>
+                <p>ScrapKart is an online scrap-buying platform committed to promoting responsible recycling.
+                    Schedule pickups, get paid instantly, and contribute to a greener planet.</p>
+            </div>
+            
+            <div class="footer-section follow">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-linkedin"></i>
+                </div>
+                <p>Links coming soon!</p>
+            </div>
+            
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p>📞 8464887568</p>
+                <p>📱 8464887568</p>
+                <p>📍 Mahendra Hills, TMC Colony Road No. 7</p>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>© 2025 ScrapKart. All rights reserved.</p>
+        </div>
+    </footer>
+    
+</body>
+</html>

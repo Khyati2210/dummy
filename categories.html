@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static "css/category.css" %}">
+        <title>ScrapKart</title>
+    </head>
+<body>
+    {% include "nav.html" %}
+    {% comment %} <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="{% static "images/logo1.png" %}" alt="ScrapKart Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="{% url "home" %}">Home</a></li>
+                <li><a href="{% url "about" %}">About Us</a></li>
+                <li><a href="{% url "categories" %}">Categories</a></li>
+                <li><a href="{% url "contact" %}">Contact</a></li>
+                <li><a href="{% url "login" %}" class="login-btn">Login</a></li>
+            </ul>
+        </nav>
+    </header> {% endcomment %}
+   <main>
+    <div class="container">
+     {% for category in categories %}
+        <div class="card">
+            {% comment %} <a href={% url "categories" category.id%}> {% endcomment %}
+            <img src={{category.image.url}} alt="E-Waste">
+            <h3>{{ category.name }}</h3>
+            <p>{{ category.description }}</p>
+            <a href="{% url 'buy1' category.id %}">
+                <button>View Scrap Types</button>
+            </a>
+            {% comment %} </a> {% endcomment %}
+        </div>
+    {% endfor %}
+    
+  </main>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static "css/compost.css" %}>
+    <title>Learn More - ScrapKart</title>
+    
+</head>
+<body>
+    {% include "nav.html" %}
+    <div class="container">
+        <h1>How We Recycle Organic Waste into Compost</h1>
+        <p>At ScrapKart, we use eco-friendly methods to convert organic waste into nutrient-rich compost.</p>
+        <div class="steps">
+            <div class="step">
+                <h3>1. Waste Collection</h3>
+                <p>We collect organic waste from households, schools, and businesses.</p>
+            </div>
+            <div class="step">
+                <h3>2. Composting Process</h3>
+                <p>The waste is placed in compost pits where it decomposes naturally over time.</p>
+            </div>
+            <div class="step">
+                <h3>3. High-Quality Compost</h3>
+                <p>After a few weeks, the organic matter turns into nutrient-rich compost, ready for use.</p>
+            </div>
+        </div>
+        <div class="contact-box">
+            <h2>Want to Buy Compost?</h2>
+            <p>Contact us for more details:  <a href={% url "contact" %}>Here !!</a></p>
+            <p>Email: <a href="mailto:support@scrapkart.com">support@scrapkart.com</a></p>
+            <p>Phone: +91-XXXXXXXXXX</p>
+        </div>
+    </div>
+
+</body>
+</html>

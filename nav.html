@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static "css/styles.css" %}>
+    <title>ScrapKart</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="{% static "images/logo1.png" %}" alt="ScrapKart Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="{% url "home" %}">Home</a></li>
+                <li><a href="{% url "about" %}">About Us</a></li>
+                <li><a href="{% url "categories" %}">Categories</a></li>
+                <li><a href="{% url "contact" %}">Contact</a></li>
+                {% if session %}
+                <li><a href={% url "logout" %}>Logout</a></li>
+                {% else %}
+                <li><a href="{% url "login" %}" class="login-btn">Login</a></li>                
+                {% endif %}
+                {% comment %} {% if session %}
+                 <li><a href="{% url "login" %}" class="login-btn">Login</a></li>
+                {% else %}
+                 <a href="{% url 'logout' %}">Logout</a>
+                {% endif %}
+                 <h2>Welcome, {{ user.username }}!</h2> {% endcomment %}
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>

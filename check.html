@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy {{ scrap.name }} - ScrapKart</title>
+    <link rel="stylesheet" href="{% static 'css/check.css' %}">
+</head>
+<body>
+    <h1>Confirm Your Purchase</h1>
+    <p><strong>Scrap Type:</strong> {{ scrap.name }}</p>
+    <p><strong>Weight:</strong> {{ weight }} kg</p>
+    <p><strong>Price per kg:</strong> ₹{{ scrap.price_per_kg }}</p>
+    <p><strong>Total Price:</strong> ₹{{ total_price }}</p>
+
+    <form method="post" action="{% url 'checkout' %}" >
+        {% csrf_token %}
+        <button type="submit">Confirm Purchase</button>
+    </form>
+
+    <a href="{% url 'buy1' scrap.category.id %}">Back to {{ scrap.category.name }}</a> 
+   
+    <footer>
+        <p>© 2025 All Rights Reserved by ScrapKart</p>
+    </footer>
+</body>
+</html>

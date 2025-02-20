@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static "css/recycle.css" %}>
+    <title>ScrapKart</title>
+</head>
+<body>
+    {% include "nav.html" %}
+    {% comment %} <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="{% static "images/logo1.png" %}" alt="ScrapKart Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="{% url "home" %}">Home</a></li>
+                <li><a href="{% url "about" %}">About Us</a></li>
+                <li><a href="{% url "categories" %}">Categories</a></li>
+                <li><a href="{% url "contact" %}">Contact</a></li>
+                {% if session %}
+                <li><a href={% url "logout" %}>Logout</a></li>
+                {% else %}
+                <li><a href="{% url "login" %}" class="login-btn">Login</a></li>                
+                {% endif %}
+               
+            </ul>
+        </nav>
+    </header> {% endcomment %}
+    <section class="sell-scrap-section">
+        <div class="container">
+            <h2>Sell Your Scrap & Support Recycling Businesses</h2>
+            <p>We collect your scrap and supply it to trusted recycling businesses, ensuring responsible waste management.</p>
+            <div class="content">
+                <img src="{% static "images/us.jpg" %}" alt="Scrap Selling">
+                <div class="info">
+                    <h3>Why Sell Your Scrap with Us?</h3>
+                    <ul>
+                        <li>Get the best price for your scrap</li>
+                        <li>We ensure safe and eco-friendly disposal</li>
+                        <li>Partnering with certified recycling companies</li>
+                        <li>Easy pickup and fast payments</li>
+                    </ul>
+                    {% comment %} <a href="#" class="btn">Sell Your Scrap</a> {% endcomment %}
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h3>About ScrapKart</h3>
+                <p>ScrapKart is an online scrap-buying platform committed to promoting responsible recycling.
+                    Schedule pickups, get paid instantly, and contribute to a greener planet.</p>
+            </div>
+            
+            <div class="footer-section follow">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-linkedin"></i>
+                </div>
+                <p>Links coming soon!</p>
+            </div>
+            
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p>📞 8464887568</p>
+                <p>📱 8464887568</p>
+                <p>📍 Mahendra Hills, TMC Colony Road No. 7</p>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>© 2025 ScrapKart. All rights reserved.</p>
+        </div>
+    </footer>
+    
+</body>
+</html>

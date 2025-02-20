@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Success</title>
+</head>
+<body>
+    <h1>Your order has been placed successfully!</h1>
+<p>Order ID: {{ order_id }}</p>
+ <p>Scrap Type: {{ order.scrap_type }}</p>
+<p>Weight: {{ order.weight }}</p>
+<p>Total Price: ₹{{ order.total_price }}</p>
+<p>Status: {{ order.status }}</p> 
+<a href="{% url "home.html" %}">Go to Home</a>
+</body>
+</html>

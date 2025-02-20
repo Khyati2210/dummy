@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScrapKart - Contact Us</title>
+    <link rel="stylesheet" href="{% static "css/contact.css" %}">
+</head>
+<body>
+    {% include "nav.html" %}
+    {% comment %} <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="{% static "images/logo1.png" %}" alt="ScrapKart Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="{% url "home" %}">Home</a></li>
+                <li><a href="{% url "about" %}">About Us</a></li>
+                <li><a href="{% url "categories" %}">Categories</a></li>
+                <li><a href="{% url "contact" %}">Contact</a></li>
+                <li><a href="#login" class="login-btn">Login</a></li>
+            </ul>
+        </nav>
+    </header> {% endcomment %}
+
+
+   
+    <div class="contact-container">
+        <h2>Contact Us</h2>
+        <form class="contact-form" method="POST" action="{% url "contact" %}">
+            {% csrf_token %}
+            <input type="text" placeholder="Your Name" required name="name">
+            <input type="email" placeholder="Email Address" name="email" required>
+            <input type="tel" placeholder="Mobile Number" name="phone" required>
+            <textarea placeholder="Your Message" name="Message"></textarea>
+            <button type="submit" class="contact-button">Send</button>
+        </form>
+    </div>
+    <div class="container">
+        <!-- Google Map -->
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.394288010126!2d-122.4194151846818!3d37.77492977975943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7e1d94a7f4b9%3A0xa5f71d6bb8d424ff!2sScrap%20Shop!5e0!3m2!1sen!2sin!4v1642424327891!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h3>About ScrapKart</h3>
+                <p>ScrapKart is an online scrap-buying platform committed to promoting responsible recycling.
+                    Schedule pickups, get paid instantly, and contribute to a greener planet.</p>
+            </div>
+            
+            <div class="footer-section follow">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-linkedin"></i>
+                </div>
+                <p>Links coming soon!</p>
+            </div>
+            
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p>📞 8464887568</p>
+                <p>📱 8464887568</p>
+                <p>📍 Mahendra Hills, TMC Colony Road No. 7</p>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>© 2025 ScrapKart. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

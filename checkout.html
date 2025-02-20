@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/checkout.css" %}">
+    <title>ScrapKart Checkout</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  
+</head>
+<body>
+    <div class="navbar">ScrapKart - Checkout</div>
+    <div class="container">
+        <h2>Checkout Details</h2>
+        <form id="checkout-form" method="POST" action="checkout">
+            {% csrf_token %}
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter Your Full Name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="contact">Contact No.</label>
+            <input type="text" id="contact" name="contact" placeholder="Enter Contact number"required>
+
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address"placeholder="Enteryour full address" required>
+
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" placeholder="Enter City" required>
+
+            <label for="country">Country</label>
+            <input type="text" id="country" name="country" placeholder="Enter Country" required>
+
+            <label for="zipcode">Zip Code</label>
+            <input type="text" id="zipcode" name="zipcode" placeholder="zipcode"required>
+
+            <label for="payment-method">Payment Method</label>
+            <select id="payment-method" name="payment_method" required>
+                <option value="cod">Cash on Delivery</option>
+                <option value="online">Online Payment</option>
+            </select>
+            
+            <button type="button" class="btn" onclick="proceedToPayment()">Continue to Checkout</button>
+        </form>
+    </div>
+    <div class="footer">&copy; 2025 ScrapKart. All rights reserved.</div>
+    
+     <script>
+        function proceedToPayment() {
+            console.log("Function proceedToPayment() triggered");  
+        
+            let paymentMethod = document.getElementById("payment-method")?.value;
+            if (!paymentMethod) {
+                console.log("❌ Payment method not found");
+                return;
+            }
+        
+           
+            let name = document.getElementById("name")?.value.trim();
+            let email = document.getElementById("email")?.value.trim();
+            let contact = document.getElementById("contact")?.value.trim();
+            let address = document.getElementById("address")?.value.trim();
+            let city = document.getElementById("city")?.value.trim();
+            let country = document.getElementById("country")?.value.trim();
+            let zipCode = document.getElementById("zip-code")?.value.trim();
+         
+          // Log field values to check if they are retrieved correctly
+            console.log("Name:", name, "Email:", email, "Contact:", contact);
+        
+            // ✅ Validate required fields
+            if (name === "" || email === "" || contact === "") {
+                alert("Please fill in all required fields before proceeding to payment.");
+                return; 
+            }
+            console.log("✅ Form validation passed");
+            if (paymentMethod === "online") {
+                console.log("✅ Proceeding with Razorpay payment");
+                 var options = {
+                    "key": "rzp_test_OhVdErtOTyckMK", // Replace with your Razorpay key
+                    "amount": 50000, // Replace with dynamic amount in paisa
+                    "currency": "INR",
+                    "name": "ScrapKart",
+                    "description": "Scrap Payment",
+                    "handler": function (response) {
+                        console.log("✅ Payment successful", response);
+                        alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
+                        window.location.href = "/order_success/";   
+                    },
+                    "prefill": {
+                        "name": name,
+                        "email": email,
+                        "contact": contact
+                    },
+                    "theme": {
+                        "color": "#28a745"
+                    }
+                };
+                var rzp = new Razorpay(options);
+                rzp.open();
+            } else if (paymentMethod === "cod") {
+                console.log("✅ Proceeding with Cash on Delivery");
+                alert("Order placed successfully with Cash on Delivery!");
+                window.location.href = "order_success/";  // Redirect after COD order
+            } else {
+                console.log("❌ Invalid payment method:", paymentMethod);
+            }
+        }
+        
+    </script>    
+ 
+    
+        
+</body>
+</html>

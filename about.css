@@ -1,0 +1,119 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Navbar styling */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color:white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo img {
+    max-width: 120px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+
+.nav-links a {
+    text-decoration: none;
+    color: #006B3C;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: yellow;
+}
+
+.login-btn {
+    background-color: yellow;
+    color: #007d3c;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #ffd700;
+}
+
+/* About Us section */
+.about-us {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh; 
+    background-color: #e0ffe0; 
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.about-us h1 {
+    color: #007B3C; 
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+.about-content{
+    display: flex;
+    align-items: center;
+    gap:20px;
+    max-width: 40%;
+}
+.about-us p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+.about-us img {
+    margin-top: 20px;
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #007B3C;
+    color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-us h1 {
+        font-size: 2em;
+    }
+
+    .about-us p {
+        font-size: 1em;
+    }
+}

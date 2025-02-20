@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/buy1.css" %}">
+    <title>ScrapKart</title>
+</head>
+<body>
+    {% include "nav.html" %}
+    {% comment %} <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="{% static "images/logo1.png" %}" alt="ScrapKart Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="{% url "home" %}">Home</a></li>
+                <li><a href="{% url "about" %}">About Us</a></li>
+                <li><a href="{% url "categories" %}">Categories</a></li>
+                <li><a href="{% url "contact" %}">Contact</a></li>
+                <li><a href="{% url "login" %}" class="login-btn">Login</a></li>
+            </ul>
+        </nav>
+    </header> {% endcomment %}
+    <br><br><main class="category-container">
+    <h1>{{ category.name }}</h1>  <!-- Show category name only once -->
+
+   {% for scrap in scrap_types %}
+    <div class="scrap-list">
+        <div class="scrap-card">
+            <p>{{ scrap.name }} - ₹{{ scrap.price_per_kg }} per kg</p>
+            <form method="get" action="{% url 'check' scrap.id %}">
+                <label for="weight">Select Weight (kg):</label>
+                <input type="number" name="weight" min="1" value="1" required>
+                <div class="buy-btn">
+                    <button type="submit">Buy Now</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    {% endfor %} 
+    </main>
+    
+
+    <footer>
+        <p>© 2025 All Rights Reserved by ScrapKart</p>
+    </footer>
+</body>
+</html>
